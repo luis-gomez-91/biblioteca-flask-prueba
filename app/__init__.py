@@ -10,6 +10,7 @@ migrate = Migrate()
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+    from app import models
 
     # Inicialización de extensiones
     db.init_app(app)

@@ -1,5 +1,9 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 class Config:
-    SECRET_KEY = "NsEEwoWmyQVLgmDmgGqRpgyQNXFmZtMO"
-    # Se agrega "+psycopg" para indicar que use la versión 3 instalada
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg://postgres:NsEEwoWmyQVLgmDmgGqRpgyQNXFmZtMO@turntable.proxy.rlwy.net:10658/railway"
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
